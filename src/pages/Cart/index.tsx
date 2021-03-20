@@ -42,6 +42,13 @@ const Cart = (): JSX.Element => {
   }
 
   function handleRemoveProduct(productId: number) {
+
+    const verifyCart = cart.some(product => product.id === productId)
+
+    if (!verifyCart) {
+      return;
+    }
+
     removeProduct(productId)
   }
 
